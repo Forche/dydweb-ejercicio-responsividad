@@ -1,0 +1,79 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 90px;
+  background-color: #333;
+}
+
+.item-menu {
+  display: flex;
+  padding: 10px;
+}
+
+.right-menu {
+  display: flex;
+  gap: 20px; /* Espacio entre los elementos de la derecha */
+}
+
+.item-menu a {
+  text-decoration: none;
+  font-size: 1.25rem;
+  color: white;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #333;
+    padding: 0px;
+    position: absolute;
+    z-index: 1;
+  }
+
+  .menu-icon {
+    display: block;
+    padding-left: 5%;
+    background-color: #333;
+    color: white;
+  }
+
+  .menu-toggle:checked + .menu-icon + .menu {
+    display: flex;
+  }
+
+  .right-menu {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .item-menu a {
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+  }
+}
